@@ -493,6 +493,11 @@ public:
     bool isOld;
     isOld = true;
     std::srand(std::time(0));
+
+    //Performance Enhancement
+    if (nonceList_.size() > 1000)
+      nonceList_.clear();
+
     do
       {
         randomNonceKey = std::rand();
